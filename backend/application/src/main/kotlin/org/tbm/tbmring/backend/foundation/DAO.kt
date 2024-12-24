@@ -10,7 +10,6 @@ import java.util.*
 
 abstract class DAO<DTO, TABLE : UUIDTable>(id: EntityID<UUID>, val table: TABLE) : UUIDEntity(id) {
 
-
     protected abstract val toDTOLambda: Transaction.() -> DTO
 
     fun toDTO(): DTO = transaction { toDTOLambda() }

@@ -1,41 +1,64 @@
 plugins {
-    alias(root.plugins.agp.application)
-    alias(root.plugins.kotlin.android)
+    alias(libs.plugins.agp.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.google.devtools.ksp)
 }
 
 android {
-    namespace = "org.tbm.tbmring.android"
-    compileSdk = 34
+    val androidConfig = androidConfiguration.versions
+    namespace = androidConfig.common.namespace.get()
+    compileSdk = androidConfig.sdk.compile.get().toInt()
 
     defaultConfig {
-        applicationId = "org.tbm.tbmring.android"
-        minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
-
-        testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+        applicationId = androidConfig.common.namespace.get().substringBefore(".android")
+        minSdk = androidConfig.sdk.min.get().toInt()
+        targetSdk = androidConfig.sdk.compile.get().toInt()
+        versionCode = androidConfig.versioning.code.get().toInt()
+        versionName =
+            "${androidConfig.versioning.major.get()}.${androidConfig.versioning.feature.get()}.${androidConfig.versioning.patch.get()}"
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
+
+        debug {
+            isMinifyEnabled = false
+            isShrinkResources = false
+            isDefault = true
+        }
     }
+
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility =
+            JavaVersion.values()[gradleConfiguration.versions.jdk.get().toInt() - 1]
+        targetCompatibility =
+            JavaVersion.values()[gradleConfiguration.versions.jdk.get().toInt() - 1]
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
+
+    buildFeatures {
+        compose = true
+    }
+
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
     }
 }
 
 dependencies {
 
-    implementation(root.appcompat.v7)
-    testImplementation(root.junit)
-    androidTestImplementation(root.runner)
-    androidTestImplementation(root.espresso.core)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(platform(libs.coil.bom))
+    implementation(platform(libs.koin.bom))
+    implementation(libs.bundles.kotlinx.android)
+    implementation(libs.bundles.koin.androidx)
+    implementation(libs.bundles.orbit.mvi)
+    implementation(libs.bundles.androidx.compose)
+    ksp(libs.compose.destinations.ksp)
 }

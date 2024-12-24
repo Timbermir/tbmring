@@ -6,10 +6,6 @@ pluginManagement {
     }
 }
 
-plugins {
-    id("org.gradle.toolchains.foojay-resolver-convention") version ("0.8.0")
-}
-
 enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 dependencyResolutionManagement {
@@ -17,6 +13,14 @@ dependencyResolutionManagement {
     repositories {
         mavenCentral()
         google()
+    }
+    versionCatalogs {
+        create("androidConfiguration") {
+            from(files("gradle/android.versions.toml"))
+        }
+        create("gradleConfiguration") {
+            from(files("../gradle/gradle.versions.toml"))
+        }
     }
 }
 

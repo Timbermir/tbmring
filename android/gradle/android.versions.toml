@@ -1,0 +1,8 @@
+[versions]
+common-namespace = "org.tbm.tbmring.android"
+sdk-min = "24"
+sdk-compile = "35"
+versioning-code = "1"
+versioning-major = "1"
+versioning-feature = "0"
+versioning-patch = "0"
