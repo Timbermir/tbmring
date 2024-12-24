@@ -1,0 +1,31 @@
+[versions]
+kotlin = "2.1.0"
+ktor = "3.0.2"
+postgresql = "42.7.4"
+exposed = "0.57.0"
+logback = "1.4.14"
+koin = "4.0.1-RC1"
+[libraries]
+ktor-server-core = { group = "io.ktor", name = "ktor-server-core" }
+ktor-server-netty = { group = "io.ktor", name = "ktor-server-netty" }
+ktor-server-auth = { group = "io.ktor", name = "ktor-server-auth-jwt" }
+ktor-server-content-negotiation = { group = "io.ktor", name = "ktor-server-content-negotiation" }
+ktor-server-sessions = { group = "io.ktor", name = "ktor-server-sessions" }
+ktor-serialization-kotlinx = { group = "io.ktor", name = "ktor-serialization-kotlinx-json" }
+logback = { group = "ch.qos.logback", name = "logback-classic", version.ref = "logback" }
+postgresql = { group = "org.postgresql", name = "postgresql", version.ref = "postgresql" }
+exposed-bom = { group = "org.jetbrains.exposed", name = "exposed-bom", version.ref = "exposed" }
+exposed-core = { group = "org.jetbrains.exposed", name = "exposed-core" }
+exposed-dao = { group = "org.jetbrains.exposed", name = "exposed-dao" }
+exposed-jdbc = { group = "org.jetbrains.exposed", name = "exposed-jdbc" }
+exposed-datetime = { group = "org.jetbrains.exposed", name = "exposed-kotlin-datetime" }
+exposed-json = { group = "org.jetbrains.exposed", name = "exposed-json" }
+koin-ktor = { group = "io.insert-koin", name = "koin-ktor", version.ref = "koin" }
+koin-logger = { group = "io.insert-koin", name = "koin-logger-slf4j", version.ref = "koin" }
+check = { group = "io.insert-koin", name = "check" }
+[bundles]
+exposed = ["exposed-core", "exposed-dao", "exposed-jdbc", "exposed-datetime", "exposed-json"]
+[plugins]
+kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+ktor = { id = "io.ktor.plugin", version.ref = "ktor" }

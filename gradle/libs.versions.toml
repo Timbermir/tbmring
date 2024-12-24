@@ -1,0 +1,57 @@
+[versions]
+kotlin = "2.1.0"
+ktor = "3.0.2"
+postgresql = "42.7.4"
+exposed = "0.57.0"
+logback = "1.4.14"
+koin = "4.0.1-RC1"
+agp = "8.4.1"
+kotlinVersion = "2.1.0"
+junit = "4.13.2"
+runner = "1.0.2"
+espressoCore = "3.0.2"
+appcompatV7 = "28.0.0"
+constraintLayout = "2.0.4"
+livedata = "1.1.1"
+viewmodel = "1.1.1"
+navigationFragmentKtx = "1.0.0"
+navigationUiKtx = "1.0.0"
+design = "28.0.0"
+[libraries]
+ktor-server-core = { group = "io.ktor", name = "ktor-server-core" }
+ktor-server-netty = { group = "io.ktor", name = "ktor-server-netty" }
+ktor-server-auth = { group = "io.ktor", name = "ktor-server-auth-jwt" }
+ktor-server-content-negotiation = { group = "io.ktor", name = "ktor-server-content-negotiation" }
+ktor-server-sessions = { group = "io.ktor", name = "ktor-server-sessions" }
+ktor-serialization-kotlinx = { group = "io.ktor", name = "ktor-serialization-kotlinx-json" }
+logback = { group = "ch.qos.logback", name = "logback-classic", version.ref = "logback" }
+postgresql = { group = "org.postgresql", name = "postgresql", version.ref = "postgresql" }
+exposed-bom = { group = "org.jetbrains.exposed", name = "exposed-bom", version.ref = "exposed" }
+exposed-core = { group = "org.jetbrains.exposed", name = "exposed-core" }
+exposed-dao = { group = "org.jetbrains.exposed", name = "exposed-dao" }
+exposed-jdbc = { group = "org.jetbrains.exposed", name = "exposed-jdbc" }
+exposed-datetime = { group = "org.jetbrains.exposed", name = "exposed-kotlin-datetime" }
+exposed-json = { group = "org.jetbrains.exposed", name = "exposed-json" }
+koin-ktor = { group = "io.insert-koin", name = "koin-ktor", version.ref = "koin" }
+koin-logger = { group = "io.insert-koin", name = "koin-logger-slf4j", version.ref = "koin" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+runner = { group = "com.android.support.test", name = "runner", version.ref = "runner" }
+espresso-core = { group = "com.android.support.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+appcompat-v7 = { group = "com.android.support", name = "appcompat-v7", version.ref = "appcompatV7" }
+constraint-layout = { group = "com.android.support.constraint", name = "constraint-layout", version.ref = "constraintLayout" }
+livedata = { group = "android.arch.lifecycle", name = "livedata", version.ref = "livedata" }
+viewmodel = { group = "android.arch.lifecycle", name = "viewmodel", version.ref = "viewmodel" }
+navigation-fragment-ktx = { group = "android.arch.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+navigation-ui-ktx = { group = "android.arch.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
+design = { group = "com.android.support", name = "design", version.ref = "design" }
+[bundles]
+exposed = ["exposed-core", "exposed-dao", "exposed-jdbc", "exposed-datetime", "exposed-json"]
+[plugins]
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinVersion" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
+
+# AGP
+agp-application = { id = "com.android.application", version.ref = "agp" }
+agp-library = { id = "com.android.library", version.ref = "agp" }
