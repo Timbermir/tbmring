@@ -1,7 +1,6 @@
-package org.tbm.tbmring.backend.modules.artists.dtos
+package org.tbm.tbmring.backend.logic
 
 import kotlinx.serialization.Serializable
-import org.tbm.tbmring.backend.modules.albums.dtos.AlbumDTO
 
 @Serializable
 data class ArtistDTO(

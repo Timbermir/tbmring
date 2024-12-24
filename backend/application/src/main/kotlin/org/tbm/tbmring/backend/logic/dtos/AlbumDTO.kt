@@ -1,8 +1,7 @@
-package org.tbm.tbmring.backend.modules.albums.dtos
+package org.tbm.tbmring.backend.logic
 
 import kotlinx.datetime.LocalDate
 import kotlinx.serialization.Serializable
-import org.tbm.tbmring.backend.modules.artists.dtos.ArtistDTO
 
 @Serializable
 data class AlbumDTO(
