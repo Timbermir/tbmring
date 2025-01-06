@@ -5,7 +5,7 @@ import org.jetbrains.exposed.dao.id.EntityID
 import org.jetbrains.exposed.sql.Transaction
 import org.tbm.tbmring.backend.foundation.DAO
 import org.tbm.tbmring.backend.modules.albums.database.AlbumsTable
-import org.tbm.tbmring.backend.modules.albums.dtos.AlbumDTO
+import org.tbm.tbmring.backend.logic.dtos.AlbumDTO
 import org.tbm.tbmring.backend.modules.artists.database.daos.ArtistDAO
 import java.util.*
 

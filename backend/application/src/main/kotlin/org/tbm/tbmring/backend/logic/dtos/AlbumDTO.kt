@@ -1,4 +1,4 @@
-package org.tbm.tbmring.backend.logic
+package org.tbm.tbmring.backend.logic.dtos
 
 import kotlinx.datetime.LocalDate
 import kotlinx.serialization.Serializable

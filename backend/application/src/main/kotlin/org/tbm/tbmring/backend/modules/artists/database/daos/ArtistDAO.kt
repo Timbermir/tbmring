@@ -6,7 +6,7 @@ import org.jetbrains.exposed.sql.Transaction
 import org.tbm.tbmring.backend.foundation.DAO
 import org.tbm.tbmring.backend.modules.albums.database.daos.AlbumDAO
 import org.tbm.tbmring.backend.modules.artists.database.tables.ArtistsTable
-import org.tbm.tbmring.backend.modules.artists.dtos.ArtistDTO
+import org.tbm.tbmring.backend.logic.dtos.ArtistDTO
 import java.util.*
 
 class ArtistDAO(id: EntityID<UUID>) : DAO<ArtistDTO, ArtistsTable>(id, ArtistsTable) {

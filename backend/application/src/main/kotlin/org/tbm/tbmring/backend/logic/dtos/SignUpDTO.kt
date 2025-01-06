@@ -3,7 +3,8 @@ package org.tbm.tbmring.backend.logic.dtos
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class ArtistDTO(
+data class SignUpDTO(
     val name: String,
-    val latestAlbum: AlbumDTO
+    val email: String,
+    val password: String
 )

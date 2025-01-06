@@ -9,8 +9,6 @@ version = "0.0.1"
 
 application {
     mainClass.set("org.tbm.tbmring.backend.ApplicationKt")
-
-    applicationDefaultJvmArgs = listOf("-Dio.ktor.development=true")
 }
 
 repositories {
@@ -37,6 +35,7 @@ dependencies {
     implementation(libs.ktor.server.request.validation)
     implementation(libs.ktor.server.sessions)
     implementation(libs.ktor.serialization.kotlinx)
+    implementation(libs.bcrypt)
     implementation(libs.logback)
     implementation(libs.postgresql)
     implementation(libs.bundles.exposed)

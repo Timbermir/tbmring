@@ -1,4 +1,4 @@
-package org.tbm.tbmring.backend.modules.ringtones.enums
+package org.tbm.tbmring.backend.logic.enums
 
 enum class AlbumType {
     SINGLE,
