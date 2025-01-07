@@ -9,7 +9,7 @@ import org.tbm.tbmring.backend.modules.users.database.daos.UserDAO
 fun Application.getUsers() {
     routing {
         get("/users") {
-            call.respondText("gay")
+            call.respondText("check")
         }
     }
 }
