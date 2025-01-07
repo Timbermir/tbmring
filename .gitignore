@@ -20,6 +20,7 @@ out/
 
 # Gradle files
 .gradle/
+gradle/daemon
 build/
 
 # Node
